@@ -1,4 +1,4 @@
-package com.wissassblog.sudoku;
+package com.bridgelabz.sudoku;
 
 
 public class Main {

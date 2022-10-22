@@ -1,10 +1,7 @@
-package com.wissassblog.sudoku.computationlogic;
+package com.bridgelabz.sudoku.computationlogic;
 
-import com.wissassblog.sudoku.constants.GameState;
-import com.wissassblog.sudoku.problemdomain.Coordinates;
-import com.wissassblog.sudoku.problemdomain.SudokuGame;
-
-import static com.wissassblog.sudoku.problemdomain.SudokuGame.GRID_BOUNDARY;
+import com.bridgelabz.sudoku.problemdomain.Coordinates;
+import com.bridgelabz.sudoku.problemdomain.SudokuGame;
 
 /**
  * Note: Algorithm based on "Simple Solving Algorithm" from the link below. I will look at more complex and efficient
@@ -48,10 +45,10 @@ public class SudokuSolver {
                 //if puzzle is invalid....
                 if (GameLogic.sudokuIsInvalid(puzzle)) {
                     //if we hit GRID_BOUNDARY and it is still invalid, move to step 4b
-                    if (index == 0 && input == GRID_BOUNDARY) {
+                    if (index == 0 && input == SudokuGame.GRID_BOUNDARY) {
                         //first cell can't be solved
                         return false;
-                    } else if (input == GRID_BOUNDARY) {
+                    } else if (input == SudokuGame.GRID_BOUNDARY) {
                         //decrement by 2 since the outer loop will increment by 1 when it finishes; we want the previous
                         //cell
                         index--;
@@ -89,8 +86,8 @@ public class SudokuSolver {
     private static Coordinates[] typeWriterEnumerate(int[][] puzzle) {
         Coordinates[] emptyCells = new Coordinates[40];
         int iterator = 0;
-        for (int y = 0; y < GRID_BOUNDARY; y++) {
-            for (int x = 0; x < GRID_BOUNDARY; x++) {
+        for (int y = 0; y < SudokuGame.GRID_BOUNDARY; y++) {
+            for (int x = 0; x < SudokuGame.GRID_BOUNDARY; x++) {
                 if (puzzle[x][y] == 0) {
                     emptyCells[iterator] = new Coordinates(x, y);
                     if (iterator == 39) return emptyCells;

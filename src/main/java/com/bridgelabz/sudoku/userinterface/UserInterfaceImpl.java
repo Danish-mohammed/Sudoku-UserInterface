@@ -1,8 +1,8 @@
-package com.wissassblog.sudoku.userinterface;
+package com.bridgelabz.sudoku.userinterface;
 
-import com.wissassblog.sudoku.constants.GameState;
-import com.wissassblog.sudoku.problemdomain.Coordinates;
-import com.wissassblog.sudoku.problemdomain.SudokuGame;
+import com.bridgelabz.sudoku.problemdomain.Coordinates;
+import com.bridgelabz.sudoku.problemdomain.SudokuGame;
+import com.bridgelabz.sudoku.constants.GameState;
 import javafx.event.EventHandler;
 import javafx.geometry.Pos;
 import javafx.scene.Group;

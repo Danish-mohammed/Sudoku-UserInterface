@@ -1,4 +1,4 @@
-package com.wissassblog.sudoku.problemdomain;
+package com.bridgelabz.sudoku.problemdomain;
 
 import java.io.IOException;
 

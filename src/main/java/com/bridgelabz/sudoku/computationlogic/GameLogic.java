@@ -1,14 +1,12 @@
-package com.wissassblog.sudoku.computationlogic;
+package com.bridgelabz.sudoku.computationlogic;
 
 //Collection of static functions which may be used to determine events and new Game states.
 
-import com.wissassblog.sudoku.constants.GameState;
-import com.wissassblog.sudoku.constants.Rows;
-import com.wissassblog.sudoku.problemdomain.SudokuGame;
+import com.bridgelabz.sudoku.constants.GameState;
+import com.bridgelabz.sudoku.constants.Rows;
+import com.bridgelabz.sudoku.problemdomain.SudokuGame;
 
 import java.util.*;
-
-import static com.wissassblog.sudoku.problemdomain.SudokuGame.GRID_BOUNDARY;
 
 /**
  * Q: Why isn't this a class hidden behind an interface?
@@ -55,8 +53,8 @@ public class GameLogic {
      * @return
      */
     public static boolean tilesAreNotFilled(int[][] grid) {
-        for (int xIndex = 0; xIndex < GRID_BOUNDARY; xIndex++) {
-            for (int yIndex = 0; yIndex < GRID_BOUNDARY; yIndex++) {
+        for (int xIndex = 0; xIndex < SudokuGame.GRID_BOUNDARY; xIndex++) {
+            for (int yIndex = 0; yIndex < SudokuGame.GRID_BOUNDARY; yIndex++) {
                 if (grid[xIndex][yIndex] == 0) return true;
             }
         }
@@ -172,9 +170,9 @@ public class GameLogic {
     }
 
     public static boolean columnsAreInvalid(int[][] grid) {
-        for (int xIndex = 0; xIndex < GRID_BOUNDARY; xIndex++) {
+        for (int xIndex = 0; xIndex < SudokuGame.GRID_BOUNDARY; xIndex++) {
             List<Integer> row = new ArrayList<>();
-            for (int yIndex = 0; yIndex < GRID_BOUNDARY; yIndex++) {
+            for (int yIndex = 0; yIndex < SudokuGame.GRID_BOUNDARY; yIndex++) {
                 row.add(grid[xIndex][yIndex]);
             }
 
@@ -185,9 +183,9 @@ public class GameLogic {
     }
 
     public static boolean rowsAreInvalid(int[][] grid) {
-        for (int yIndex = 0; yIndex < GRID_BOUNDARY; yIndex++) {
+        for (int yIndex = 0; yIndex < SudokuGame.GRID_BOUNDARY; yIndex++) {
             List<Integer> row = new ArrayList<>();
-            for (int xIndex = 0; xIndex < GRID_BOUNDARY; xIndex++) {
+            for (int xIndex = 0; xIndex < SudokuGame.GRID_BOUNDARY; xIndex++) {
                 row.add(grid[xIndex][yIndex]);
             }
 
@@ -200,7 +198,7 @@ public class GameLogic {
     public static boolean collectionHasRepeats(List<Integer> collection) {
         //count occurrences of integers from 1-GRID_BOUNDARY. If Collections.frequency returns a value greater than 1,
         //then the square is invalid (i.e. a non-zero number has been repeated in a square)
-        for (int index = 1; index <= GRID_BOUNDARY; index++) {
+        for (int index = 1; index <= SudokuGame.GRID_BOUNDARY; index++) {
             if (Collections.frequency(collection, index) > 1) return true;
         }
 

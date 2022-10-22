@@ -1,5 +1,5 @@
-import com.wissassblog.sudoku.constants.GameState;
-import com.wissassblog.sudoku.problemdomain.SudokuGame;
+import com.bridgelabz.sudoku.constants.GameState;
+import com.bridgelabz.sudoku.problemdomain.SudokuGame;
 
 class TestData {
     //No access modifier means Package-Private access, i.e. only tests within src/test/java

@@ -1,7 +1,7 @@
-package com.wissassblog.sudoku.problemdomain;
+package com.bridgelabz.sudoku.problemdomain;
 
-import com.wissassblog.sudoku.computationlogic.SudokuUtilities;
-import com.wissassblog.sudoku.constants.GameState;
+import com.bridgelabz.sudoku.computationlogic.SudokuUtilities;
+import com.bridgelabz.sudoku.constants.GameState;
 
 import java.io.Serializable;
 

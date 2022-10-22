@@ -1,14 +1,11 @@
-package com.wissassblog.sudoku.computationlogic;
+package com.bridgelabz.sudoku.computationlogic;
 
-import com.wissassblog.sudoku.constants.GameState;
-import com.wissassblog.sudoku.problemdomain.Coordinates;
-import com.wissassblog.sudoku.problemdomain.SudokuGame;
+import com.bridgelabz.sudoku.problemdomain.Coordinates;
+import com.bridgelabz.sudoku.problemdomain.SudokuGame;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-
-import static com.wissassblog.sudoku.problemdomain.SudokuGame.GRID_BOUNDARY;
 
 
 class GameGenerator {
@@ -27,10 +24,10 @@ class GameGenerator {
      */
     private static int[][] getSolvedGame() {
         Random random = new Random(System.currentTimeMillis());
-        int[][] newGrid = new int[GRID_BOUNDARY][GRID_BOUNDARY];
+        int[][] newGrid = new int[SudokuGame.GRID_BOUNDARY][SudokuGame.GRID_BOUNDARY];
 
         //Value represents potential values for each square. Each value must be allocated 9 times.
-        for (int value = 1; value <= GRID_BOUNDARY; value++) {
+        for (int value = 1; value <= SudokuGame.GRID_BOUNDARY; value++) {
             //allocations refers to the number of times in which a square has been given a value.
             int allocations = 0;
 
@@ -45,7 +42,7 @@ class GameGenerator {
             //keeps breaking, after 500 times we reset the board entirely and start again.
             int attempts = 0;
 
-            while (allocations < GRID_BOUNDARY) {
+            while (allocations < SudokuGame.GRID_BOUNDARY) {
 
                 if (interrupt > 200) {
                     allocTracker.forEach(coord -> {
@@ -64,8 +61,8 @@ class GameGenerator {
                     }
                 }
 
-                int xCoordinate = random.nextInt(GRID_BOUNDARY);
-                int yCoordinate = random.nextInt(GRID_BOUNDARY);
+                int xCoordinate = random.nextInt(SudokuGame.GRID_BOUNDARY);
+                int yCoordinate = random.nextInt(SudokuGame.GRID_BOUNDARY);
 
                 if (newGrid[xCoordinate][yCoordinate] == 0) {
                     newGrid[xCoordinate][yCoordinate] = value;
@@ -106,7 +103,7 @@ class GameGenerator {
         boolean solvable = false;
 
         //note: not actually solvable until the algorithm below finishes!
-        int[][] solvableArray = new int[GRID_BOUNDARY][GRID_BOUNDARY];
+        int[][] solvableArray = new int[SudokuGame.GRID_BOUNDARY][SudokuGame.GRID_BOUNDARY];
 
         while (solvable == false){
 
@@ -116,8 +113,8 @@ class GameGenerator {
             //remove 40 random numbers
             int index = 0;
             while (index < 40) {
-                int xCoordinate = random.nextInt(GRID_BOUNDARY);
-                int yCoordinate = random.nextInt(GRID_BOUNDARY);
+                int xCoordinate = random.nextInt(SudokuGame.GRID_BOUNDARY);
+                int yCoordinate = random.nextInt(SudokuGame.GRID_BOUNDARY);
 
                 if (solvableArray[xCoordinate][yCoordinate] != 0) {
                     solvableArray[xCoordinate][yCoordinate] = 0;
@@ -125,7 +122,7 @@ class GameGenerator {
                 }
             }
 
-            int[][] toBeSolved = new int[GRID_BOUNDARY][GRID_BOUNDARY];
+            int[][] toBeSolved = new int[SudokuGame.GRID_BOUNDARY][SudokuGame.GRID_BOUNDARY];
             SudokuUtilities.copySudokuArrayValues(solvableArray, toBeSolved);
             //check if result is solvable
             solvable = SudokuSolver.puzzleIsSolvable(toBeSolved);
@@ -138,8 +135,8 @@ class GameGenerator {
     }
 
     private static void clearArray(int[][] newGrid) {
-        for (int xIndex = 0; xIndex < GRID_BOUNDARY; xIndex++) {
-            for (int yIndex = 0; yIndex < GRID_BOUNDARY; yIndex++) {
+        for (int xIndex = 0; xIndex < SudokuGame.GRID_BOUNDARY; xIndex++) {
+            for (int yIndex = 0; yIndex < SudokuGame.GRID_BOUNDARY; yIndex++) {
                 newGrid[xIndex][yIndex] = 0;
             }
         }

@@ -1,6 +1,6 @@
-import com.wissassblog.sudoku.computationlogic.GameLogic;
-import com.wissassblog.sudoku.computationlogic.SudokuUtilities;
-import com.wissassblog.sudoku.constants.GameState;
+import com.bridgelabz.sudoku.computationlogic.GameLogic;
+import com.bridgelabz.sudoku.computationlogic.SudokuUtilities;
+import com.bridgelabz.sudoku.constants.GameState;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 

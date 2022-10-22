@@ -1,5 +1,4 @@
-import com.wissassblog.sudoku.computationlogic.GameLogic;
-import com.wissassblog.sudoku.problemdomain.SudokuGame;
+import com.bridgelabz.sudoku.computationlogic.GameLogic;
 import org.junit.jupiter.api.Test;
 
 public class GameGeneratorTest {

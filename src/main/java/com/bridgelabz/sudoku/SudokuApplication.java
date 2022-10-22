@@ -1,7 +1,7 @@
-package com.wissassblog.sudoku;
+package com.bridgelabz.sudoku;
 
-import com.wissassblog.sudoku.buildlogic.SudokuBuildLogic;
-import com.wissassblog.sudoku.userinterface.UserInterfaceImpl;
+import com.bridgelabz.sudoku.buildlogic.SudokuBuildLogic;
+import com.bridgelabz.sudoku.userinterface.UserInterfaceImpl;
 import javafx.application.Application;
 import javafx.stage.Stage;
 
